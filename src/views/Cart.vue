@@ -17,8 +17,10 @@ import { ref, computed } from 'vue';
 import { useStore } from 'vuex';
 
 const store = useStore();
+//get products from store
 const products = computed(() => store.state.items);
 
+// Dispatch remove cart action
 const handleRemove = (productId) => {
     store.dispatch('removeFromCart', productId);
 }
