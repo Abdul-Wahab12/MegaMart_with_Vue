@@ -1,13 +1,28 @@
 <template>
     <div>
-        <h1>Cart</h1>
+        <h3>Cart</h3>
+        <div class="cartWrapper">
+            <div v-for="product in products" :key="product.id" class="cartCard">
+                <img :src="product.image" alt="">
+                <h5>{{ product.title }}</h5>
+                <h5>{{ product.price }}</h5>
+                <button class="btn" @click="handleRemove(product.id)">Remove</button>
+            </div>
+        </div>
     </div>
 </template>
 
-<script>
-export default {
-    
+<script setup>
+import { ref, computed } from 'vue';
+import { useStore } from 'vuex';
+
+const store = useStore();
+const products = computed(() => store.state.items);
+
+const handleRemove = (productId) => {
+    store.dispatch('removeFromCart', productId);
 }
+
 </script>
 
 <style>

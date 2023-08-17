@@ -15,14 +15,6 @@ import { useStore } from 'vuex';
 
 const store = useStore();
 const cartItems = computed(() => store.state.items);
-// export default {
-//     name: 'Navbar',
-//     computed: {
-//         cartItems() {
-//             return this.$store.state.cart;
-//         }
-//     }
-// }
 </script>
 
 <style>
