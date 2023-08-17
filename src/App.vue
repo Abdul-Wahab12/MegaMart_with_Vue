@@ -1,30 +1,98 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <Navbar />
+  <router-view />
 </template>
 
+<script>
+import Navbar from './components/Navbar.vue';
+export default {
+  components: {
+    Navbar
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 20px;
+  background: whitesmoke;
+}
+
+img {
+  height: 80px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
   text-align: center;
-  color: #2c3e50;
+  border-radius: 30px;
 }
 
-nav {
-  padding: 30px;
+.productsWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
 }
 
-nav a {
+.btn {
+  border: none;
+  outline: none;
+  background: #debb21;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 5px;
   font-weight: bold;
-  color: #2c3e50;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.btn-add {
+  margin: auto;
+  margin-top: 15px;
 }
-</style>
+
+.btn:hover {
+  background: #dcb014;
+}
+
+.heading {
+  padding: 25px 0;
+}
+
+.cartCount {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 40px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+}
+
+.cartCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 14px;
+  border-radius: 5px;
+}
+
+.logo {
+  color: #0e81ec;
+  font-weight: 600;
+  font-size: x-large;
+}</style>

@@ -1,14 +1,11 @@
-import { createStore } from 'vuex'
+// import { createStore } from 'vuex'
+// import cartModule from './cart';
 
-export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
-})
+// const store =  createStore({
+//   modules: {
+//     namespaced: true,
+//     cart: cartModule
+//   }
+// });
+
+// export default store;
