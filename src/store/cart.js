@@ -1,10 +1,12 @@
 import { createStore } from "vuex";
+import createPersistedState from 'vuex-persistedstate';
 
 // Define the initial state
 
 const initialState = [];
 
 const store = createStore({
+    plugins: [createPersistedState()],
     // namespaced: true,
     state() {
         return {
